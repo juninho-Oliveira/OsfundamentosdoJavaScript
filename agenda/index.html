@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de clientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Agendas de clientes</h1>
+    <form id="agenda-form">
+        <!-- nome -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" 
+        placeholder="Digite o nome" required>
+
+        <!-- telefone -->
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" 
+        placeholder="Digite o telefone" required>
+
+         <!-- endereco -->
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" 
+        placeholder="Digite o endereço" required>
+
+        <button type="submit" id="submit-button">Adicionar contato</button>
+
+    </form>
+    
+    <div id="lista-contatos">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
