@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de clientes</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Agendas de clientes</h1>
     <form id="agenda-form">
         <!-- nome -->
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" 
-        placeholder="Digite o nome" required>
+        <input type="text" id="nome" placeholder="Digite o nome" required>
 
         <!-- telefone -->
         <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" 
-        placeholder="Digite o telefone" required>
+        <input type="text" id="telefone" placeholder="Digite o telefone" required >
 
-         <!-- endereco -->
+        <!-- cep -->
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" 
+        placeholder="Digite o cep" maxlength="8">
+        <div id="cep-error" class="error-message"></div>
+        <button type="button" id="buscar-cep">
+            Buscar endereço
+        </button>
+
+        <!-- endereco -->
         <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" 
-        placeholder="Digite o endereço" required>
+        <input type="text" id="endereco" placeholder="Digite o endereço" required>
 
-        <button type="submit" id="submit-button">Adicionar contato</button>
+        <div class="botao-form">
+            <button type="submit" id="submit-button">Adicionar contato</button>
+            <button type="button" id="reset-button">Limpar</button>
+        </div>
 
     </form>
-    
+
     <div id="lista-contatos">
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

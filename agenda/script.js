@@ -110,6 +110,49 @@ function salvarEdicao (e) {
 }
 
 
+async function buscarEnderecoPorCep(cep) {
+    const cepError = document.getElementById('cep-error');
+    cepError.textContent = '';
+
+    const response =
+        await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+
+    if (response.ok) {
+        const data = await response.json();
+
+        if (!data.erro) {
+            document.getElementById('endereco').value =
+                `${data.logradouro}, ${data.bairro}, 
+            ${data.localidade}, ${data.uf} `
+        } else {
+            cepError.textContent = 'Cep não encontrado.'
+        }
+    } else {
+        cepError.textContent = "Erro ao buscar o cep."
+        " Tente novamante";
+    }
+}
+
+document.getElementById('buscar-cep').addEventListener('click', () => {
+    const cep = document.getElementById('cep').value.trim();
+    if(cep != '' && cep.length ==8){
+        buscarEnderecoPorCep(cep);
+    }else{
+        const cepError = document.getElementById('cep-error');
+        cepError.textContent = 'Digite um cep válido.'
+    }
+});
+
+document.getElementById('reset-button').addEventListener('click',()=>{
+    contatos=[];
+    form.reset();
+    contatoEditando=-1;
+    const cepError = document.getElementById('cep-error');
+    cepError.textContent = '';
+    mostrarContatos();
+});
+
+
 
 
 form.addEventListener('submit', function (e) {
