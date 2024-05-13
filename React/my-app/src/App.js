@@ -1,28 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
+import CustomButton from './custom/customButton';
+import InputVarios from './custom/input';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <>
+    <h1>Botão</h1>
+    <CustomButton 
+    label={"botão2"}
+    onClick={()=> alert('aqui2')}/>
+
+<CustomButton 
+    label={"botão2"}
+    onClick={()=> alert('aqui2')}/>
+    <h2>Inputs</h2>
+
+    <InputVarios tipo="text"  nomeDentro="Digite aqui">input</InputVarios>
+    <InputVarios tipo="number"  nomeDentro="Digite o numero">input</InputVarios>
+    </>
 
 
-
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
   );
 }
 
